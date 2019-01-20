@@ -1,0 +1,24 @@
+[
+  {
+    "name" : "AeroPress",
+    "recipe": [
+      {"title": "Peser le café"}
+    ]
+  },
+  {
+    "name" : "French press",
+    "recipe":[
+      {
+        "title": "Peser le café",
+        "type": "weight"
+      }, {
+        "title": "Verser l'eau",
+        "type": "pour_water"
+      }, {
+        "title": "Attendre 1 min",
+        "type": "wait",
+        "value": 60
+      }
+    ]
+  }
+]
