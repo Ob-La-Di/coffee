@@ -1,8 +1,12 @@
 import 'package:coffee/models/BrewingMethod.dart';
+import 'package:coffee/screens/RecipeSetup.dart';
 import 'package:coffee/utils/fileHelper.dart';
+import 'package:coffee/utils/mathHelper.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -58,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => RecipeScreen(recipe: method),
+                        builder: (context) => RecipeSetupScreen(method),
                       ),
                     );
                   });
@@ -66,13 +70,4 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class RecipeScreen extends StatelessWidget {
-  final BrewingMethod recipe;
 
-  RecipeScreen({Key key, @required this.recipe}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text('${recipe.title}')));
-  }
-}

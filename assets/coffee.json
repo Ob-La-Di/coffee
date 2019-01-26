@@ -1,24 +1,41 @@
 [
   {
-    "name" : "AeroPress",
+    "formula": "0.0625 * __VOLUME__",
+    "name": "AeroPress",
     "recipe": [
-      {"title": "Peser le café"}
+      {
+        "title": "Peser le café"
+      }
     ]
   },
   {
-    "name" : "French press",
-    "recipe":[
+    "name": "French press",
+    "formula": "0.0625 * __VOLUME__",
+    "recipe": [
       {
         "title": "Peser le café",
         "type": "weight"
-      }, {
+      },
+      {
         "title": "Verser l'eau",
         "type": "pour_water"
-      }, {
+      },
+      {
         "title": "Attendre 1 min",
         "type": "wait",
         "value": 60
       }
     ]
+  },
+  {
+    "name": "Chemex",
+    "formula": "0.0625 * __VOLUME__ + 16",
+    "recipe": [{
+      "title": "Rince the paper filter",
+      "type": "rince_filter"
+    }, {
+      "title": "Pour the water in the sink",
+      "type": "pour_in_sink"
+    }]
   }
 ]

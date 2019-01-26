@@ -14,14 +14,15 @@ class Recipe {
 class BrewingMethod {
   final String title;
   final List<Recipe> recipe;
+  final String formula;
 
 
-  BrewingMethod({this.title, this.recipe});
+  BrewingMethod({this.title, this.recipe, this.formula});
   factory BrewingMethod.fromJson(Map<String, dynamic> json) {
     List<Recipe> recipeList = new List();
-    print(json['recipe'].forEach((element) {
+    json['recipe'].forEach((element) {
       recipeList.add(Recipe(title: element['title'], type: element['type'], value: element['value']));
-    }));
-    return BrewingMethod(title: json["name"], recipe: recipeList);
+    });
+    return BrewingMethod(title: json["name"], recipe: recipeList, formula: json['formula']);
   }
 }
